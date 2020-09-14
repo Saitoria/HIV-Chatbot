@@ -1,0 +1,84 @@
+body{
+	background-image: url("background.jpg");
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
+h1{
+	text-align: center;
+	align-content: center;
+	
+}
+.container{
+	text-align: center;
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 15px;
+	width: auto;
+	margin-left:25%;
+	margin-right:25%;
+	overflow:hidden;
+}
+#Chatbox{
+	position:relative;
+	margin-top:30px;
+	margin-right:auto;
+	margin-left:auto;
+	width:80%;
+	padding:8px;
+}
+
+#userInput{
+display: flex;
+position:relative;
+line-height:10px;
+width: 50%;
+margin-top:50px;
+margin-left:auto;
+margin-right:auto;
+}
+#textInput{
+	width:60%;
+	line-height:20px;
+	margin:10px;
+	outline:none;
+	border-radius:5px;
+	border:none;
+}
+#buttonInput{
+	width:70px;
+	line-height:20px;
+	margin:10px;
+	outline:none;
+	border-radius:5px;
+	border:none;
+}
+.botText{
+text-align: left;
+line-height:25px;
+}
+.userText{
+text-align: right;
+line-height:25px;
+}
+
+.botText span{
+	color: black;
+	background-color: lightgreen;
+	padding:5px;
+	border-radius: 4px;
+	margin:2px;
+}
+.userText span{
+	color: black;
+	background-color: orange;
+	padding:5px;
+	border-radius: 4px;
+        margin:2px;
+}
+
+#tidbit{
+	position:absolute;
+	bottom:0;
+	top:0;
+	width:300px;
+}

@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GUI</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/gui.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>HIV CHAT-BOT ENHANCED</h1>
+
+
+<div class="container">
+
+
+<div id="Chatbox">
+<p class="botText"><span>Karibu ujue zaidi kuhusu ukimwi</span></p>
+</div>
+
+<div id="userInput">
+
+<input type="text" id="textInput" name="msg" placeholder="Enter your meassage">
+<input type="submit" value="SEND" id="buttonInput">
+
+</div>
+
+<script>
+	function getBotResponse() {
+		var inText = $("#textInput").val();
+		var userText = '<p class="userText"><span>'+ inText + '</span></p>';
+		$("#textInput").val("");
+		$("#Chatbox").append(userText);	
+		document.getElementById('userInput').scrollIntoView({block:'start', behavior:'smooth'});
+		$.get("/ask",{msg:inText}).done(function (data) {
+			var botText = '<p class="botText"><span>'+ data + '</span></p>';
+			$("#Chatbox").append(botText);
+			document.getElementById('userInput').scrollIntoView({block:'start', behavior:'smooth'});
+		});
+		}
+		$("#textInput").keypress(function (e) {
+			if(e.which == 13){
+			getBotResponse();
+			}
+		});
+		$("#buttonInput").click(function () {
+			getBotResponse();
+		});
+</script>
+</div>
+</body>
+</html>
